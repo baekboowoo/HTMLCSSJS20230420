@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            div {
+                background-color: orange;
+            }
+            .d1 {
+                width: 300px;
+                height: 300px;
+                text-align: center;
+                line-height: 300px;
+                
+                /* width 단위가 잡혀있을때 사용할수 있다.*/ 
+                    margin:20px auto; 
+                /* top,right,bottom,left : 10px 
+                   margin: 10px; */
+                
+                /* top,botoom / right,left
+                   margin: 20px 40px; */
+                
+                /* top / right,left / bottom 
+                   margin: 10px 20px 30px ; */
+                
+                /* top / right / bottom / left 
+                   margin: 10px 20px 30px 40px; */
+                 
+                /* margin-top: ;
+                   margin-right: ;
+                   margin-bottom: ;
+                   margin-right: ; */
+            }
+
+            .parent{
+                width: 300px;
+                height: 300px;
+                
+            }
+            .son{
+                width: 150px;
+                height: 150px;
+                background-color: royalblue;
+                /* margin-top: 50px;
+                margin-left: 50px;
+                margin-bottom: 100px;
+                margin-left: 500px; */
+                /* margin:10px auto; */
+                margin: auto;
+                
+                
+
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="d1">HELLOWORLD</div>
+
+        <div class="parent">
+            <div class="son"></div>
+        </div>
+    
+    </body>
+</html>
