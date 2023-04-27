@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .d1{}
+        .d1>input[type="checkbox"]{
+            display: none;
+        }
+        .d1>label{
+            display: block;
+            width: 45px;
+            height: 45px;
+            /* border: 1px solid black; */
+            background-image: url("/img/smile.svg");
+            background-size: 100%;
+        }
+        .d1>input[type="checkbox"]:checked+label{
+            background-image:url("/img/sad.svg") ;
+        }
+        .d2{}
+        .d2>input[type="radio"]{
+            display: none;
+        }
+        .d2>label{
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            border: 1px solid gray;
+            border-radius: 50%;
+           
+        }
+
+        #r1:checked+label{
+            background-image: url("/img/male.svg");
+            background-size: 100%;
+           
+        }
+
+        #r2:checked+label{
+            background-image: url("/img/female.svg");
+            background-size: 100%;
+        }
+        .e1>input[type="checkbox"]{
+            display: none;
+        }
+        .e1>label{
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            border: 1px solid gray;
+        }
+        #climing+label::after{
+            content: "등산";
+        }
+        #climing:checked+label::after{
+            content: " ";
+        }
+        #climing:checked+label{
+            background-image: url("/img/hiking.svg");  
+        }
+        #swiming+label::after{
+            content: "수영";
+        }
+        #swiming:checked+label::after{
+            content: " ";
+        }
+        #swiming:checked+label{
+            background-image: url("/img/swiming.svg");
+        }
+        #reading+label::after{
+            content: "독서";
+        }
+        #reading:checked+label::after{
+            content: " ";
+        }
+        #reading:checked+label{
+            background-image: url("/img/reading.svg");
+        }
+        #running+label::after{
+            content: "조깅";
+        }
+        #running:checked+label::after{
+            content: " ";
+        }
+        #running:checked+label{
+            background-image: url("/img/run.svg");
+        }
+    </style>
+
+</head>
+<body>
+    <div class="d1">
+   <input type="checkbox" id="chk1"><label for="chk1" ></label>
+    </div>
+
+    <div class="d2">
+        <input type="radio" name="gender" value="male" id="r1">     <label for="r1"></label>
+        <input type="radio" name="gender" value="female" id="r2">   <label for="r2"></label>
+    </div>
+
+  <hr>
+  <!-- 취미 -->
+  <div class="e1">
+  <input type="checkbox" id="climing"><label for="climing"></label>
+  <input type="checkbox" id="swiming"><label for="swiming"></label>
+  <input type="checkbox" id="reading"><label for="reading"></label>
+  <input type="checkbox" id="running"><label for="running"></label>
+</div>
+</body>
+</html>
