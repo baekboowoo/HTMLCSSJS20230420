@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>이게 맞나 싶다.</title>
+        <!-- reset cdn -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+            rel="stylesheet">
+        <style>
+            header {
+                height: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(28, 92, 57);
+                border-bottom: 1px solid rgb(248, 207, 63);
+            }
+            .LOGO > img {
+                width: 894px;
+                height: 143px;
+            }
+            .login_ {
+                width: 247px;
+                height: 149px;
+                
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: right;
+            }
+            .login_ > img {
+                width: 22px;
+                height: 22px;
+
+            }
+            .login_ > a > .login_img > img {
+                width: 24px;
+                height: 25px;
+            }
+            .login_ > a > .login_wirte {
+                width: 93px;
+                height: 23px;
+                font-size: 14px;
+
+            }
+
+            body {
+                height: 3000px;
+            }
+            #menu {
+                display: flex;
+                justify-content: center;
+                border: 1px solid gray;
+                background-color: rgb(28, 92, 67);
+                position: sticky;
+                width: 100%;
+                top: 0;
+                height: 50px;
+                line-height: 50px;
+            }
+            #menu li a {
+                font-weight: 600;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            ul > li {
+                width: 120px;
+
+                position: relative;
+            }
+            ul > li > a {
+                display: block;
+
+                height: 30px;
+            }
+            #menu > li > ul {
+                position: absolute;
+                left: 0;
+                top: 30px;
+                display: none;
+            }
+            #menu > li > ul > li {}
+            #menu > li > ul > li > a {}
+            #menu > li:hover ul {
+                display: block;
+            }
+        </style>
+    </head>
+    <header>
+        <div class="LOGO"><img src="/img/masilLOGO.jpg" alt="masilLOGO"></div>
+        <div class="login_">
+            <a>
+                <span class="login_img"><img src="/img/login_.svg" alt=""></span>
+                <span class="login_wirte">ORDER LOGIN</span>
+            </a>
+            <img src="/img/search.svg" alt="search">
+        </div>
+    </header>
+    <body>
+        <div class="quickMenu"></div>
+        <ul id="menu">
+            <li>
+                <a style="color: rgb(248, 207, 63) ;" href="">마실 홈</a>
+            </li>
+            <li>
+                <a href="">회사소개</a>
+                <ul>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">메뉴</a>
+                <ul>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">가맹안내</a>
+                <ul>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">매장</a>
+                <ul>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">소식</a>
+                <ul>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                    <li>
+                        <a href="">SUBMENU</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div style="height: 600px; background-image: url('/img/ggullbg.jpg');"></div>
+        <div style="height: 600px; background-image: url('/img/kongbg.png');"></div>
+        <div style="height: 500px; background-image: url('/img/ddalgibg.png');"></div>
+        <div></div>
+        <div></div>
+    </body>
+</html>
