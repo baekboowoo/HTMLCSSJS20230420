@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>마실커피</title>
+
+        <!-- reset cdn -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet" href="/Test01/css/footer.css">
+        <style>
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            a {
+                text-decoration: none;
+            }
+            header {
+                width: 100%;
+                height: 150px;
+                display: flex;
+                justify-content: center;
+                background-color: rgb(28,92,57);
+                border-bottom: 1px solid rgb(248, 224, 188);
+
+            }
+            header > .LOGO > a > img {
+                width: 100%;
+                height: 150px;
+            }
+
+            body {
+                height: 900px;
+
+            }
+            /* Sticky */
+            .one {
+                position: sticky;
+                top: 0;
+                z-index: 1;
+            }
+            /* 서브메뉴 전체다운 */
+            /* 2단 기본박스 */
+            #nav_wrap {
+                background: rgba(24, 23, 23, 0.7);
+                width: 100%;
+                height: 60px;
+                position: absolute;
+                transition: 0.5s;
+                overflow: hidden;
+            }
+            /* 마우스오버, 2단 펼침 박스, 크기변형 */
+            #nav_wrap:hover {
+                height: 380px;
+            }
+
+            /* 메뉴바 꾸미기 */
+            .one > .gnb > .menu {
+                display: flex;
+                justify-content: center;
+                border: 1px solid gray;
+                background-color: rgb(28,92,57);
+                width: 100%;
+                height: 60px;
+            }
+
+            .one > .gnb > .menu > li {
+                width: 128px;
+                position: relative;
+            }
+            /* 메뉴바 글자 간격, 꾸미기 */
+            .one > .gnb > .menu > li > a {
+                display: block;
+                height: 60px;
+                text-align: center;
+                line-height: 60px;
+                font-weight: 900;
+                color: white;
+            }
+            /* 메뉴 마우스오버시 변경사항 */
+            .one > .gnb > .menu > li > a:hover {
+                color: gray;
+            }
+            /* 서브메뉴 정렬 */
+            .one > .gnb > .menu > li > .submenu {
+                position: absolute;
+                left: 25px;
+                top: 60px;
+            }
+            /* 서브메뉴 간격 */
+            .one > .gnb > .menu > li > .submenu > li {
+                height: 35px;
+                line-height: 60px;
+                text-align: center;
+
+            }
+            .one > .gnb > .menu > li > .submenu::before {}
+
+            /* 서브메뉴 글자색 */
+            .one > .gnb > .menu > li > .submenu > li > a {
+                color: white;
+            }
+            /* 서브메뉴 글자 마우스오버시 변경사항 */
+            .one > .gnb > .menu > li > .submenu > li > a:hover {
+                color: yellow;
+            }
+
+            .one > .search {
+                width: 100px;
+                height: 100px;
+            }
+
+            .banner {
+                margin-top: 60px;
+                height: 200px;
+                width: 100%;
+                overflow: hidden;
+            }
+            .banner > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .menu {
+                display: flex;
+                justify-content: center;
+                height: 100vh;
+            }
+            
+            article {
+                width: 980px;
+                border: 1px solid red;
+            }
+
+            aside {
+                margin: 10px;
+                width: 200px;
+                
+            }
+
+            .sidemenu {
+                border: 1px solid gray;
+                background-color: #ffffff;
+                height: 288px;
+            }
+
+            .sidemenu ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .sidemenu li {
+                margin: 10px;
+            }
+
+            .sidemenu a {
+                display: block;
+                padding: 5px;
+                color: #333;
+                text-decoration: none;
+                transition: all 0.3s;
+            }
+
+            .sidemenu a:hover {
+                background-color: #FFD141;
+            }
+
+
+            .main {
+                display: flex;
+                width: 960px;
+                justify-content: space-between;
+                padding: 0 13px;
+            }
+
+
+
+            .container{
+            width: 150px;
+            height: 150px;
+            perspective: 1000px;
+            display: inline-block;
+            justify-content: flex-start;
+            left: 0px;right: 0px;top: 0px;bottom: 0px;
+            margin: 30px ;
+            padding: 10px;
+
+        }
+        .container>.card{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 1s;
+        }
+
+        .container>.card>.front,
+        .container>.card>.back{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;top: 0px;
+            backface-visibility: hidden;
+            border: 1px solid #FFD141;
+            box-shadow: 15px 15px 15px lightgray;
+        }
+
+        .container>.card>.front{
+            /* background-color: orange; */
+           
+            background-size: contain;
+            background-repeat: no-repeat;
+            
+        }
+        
+        .container>.card>.back{
+            background-color: rgb(28,92,57);
+            /* back은 기본적으로 hidden 처리 */
+            transform: rotateY(180deg);
+            font-size: 0.7rem;
+            color: #FFD141;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .container:hover .card{
+
+            transform: rotateY(180deg);
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="LOGO">
+                <a href="/Test01/masil.html">
+                    <img src="./img/logo1.jpg" alt="">
+                </a>
+
+            </div>
+        </header>
+        <!-- <div class="quickMenu"></div> -->
+        <div class="one">
+            <nav class="gnb" id="nav_wrap">
+                <ul class="menu">
+                    <li>
+                        <a href="/Test01/masil.html" style=" color: #ffd141;">마실홈</a>
+                    </li>
+                    <li>
+                        <a href="">회사소개</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="">브랜드소개</a>
+                            </li>
+                            <li>
+                                <a href="">브랜드 BI</a>
+                            </li>
+                            <li>
+                                <a href="">오시는길</a>
+                            </li>
+                            <li>
+                                <a href="">문의전화</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="masil_menu.html">메뉴</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="">신메뉴</a>
+                            </li>
+                            <li>
+                                <a href="">커피</a>
+                            </li>
+                            <li>
+                                <a href="">베버리지</a>
+                            </li>
+                            <li>
+                                <a href="">에이드</a>
+                            </li>
+                            <li>
+                                <a href="">주스</a>
+                            </li>
+                            <li>
+                                <a href="">스무디/프라페</a>
+                            </li>
+                            <li>
+                                <a href="">티</a>
+                            </li>
+                            <li>
+                                <a href="">디저트</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">가맹점안내</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="">개설비용</a>
+                            </li>
+                            <li>
+                                <a href="">인테리어</a>
+                            </li>
+                            <li>
+                                <a href="">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="">가맹문의</a>
+                            </li>
+                            <li>
+                                <a href="">개설절차</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">매장</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="">매장찾기</a>
+                            </li>
+                            <li>
+                                <a href="">마실커피 일정</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">소식</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="">공지사항</a>
+                            </li>
+                            <li>
+                                <a href="">마실이야기</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="banner">
+            <img src="./img/banner4.png" alt="">
+        </div>
+        <div class="menu">
+            <aside>
+                <div class="sidemenu">
+                    <ul>
+                        <li>
+                            <a href="">신메뉴</a>
+                        </li>
+                        <li>
+                            <a href="">커피</a>
+                        </li>
+                        <li>
+                            <a href="">베버리지</a>
+                        </li>
+                        <li>
+                            <a href="">에이드</a>
+                        </li>
+                        <li>
+                            <a href="">주스</a>
+                        </li>
+                        <li>
+                            <a href="">스무디/프라페</a>
+                        </li>
+                        <li>
+                            <a href="">티</a>
+                        </li>
+                        <li>
+                            <a href="">디저트</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <article>
+                <hr style="border-top: 10px solid #ffd141; width: 980px;">
+                <!-- <div class="line"></div> -->
+                <div class="main">
+                    <div class="heading">
+                        <h1>COFFEE</h1>
+                    </div>
+                    <div class="menusearch"><input type="text" placeholder="검색할 내용을 입력하세요."></div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="front"></div>
+                        <div class="back">
+                            바나나 스무디 <br>
+                            겁나 맛있겠다   <br>
+                            2023-05-03 ~ 2023-05-03
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="front"></div>
+                        <div class="back">
+                            바나나 스무디 <br>
+                            겁나 맛있겠다   <br>
+                            2023-05-03 ~ 2023-05-03
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="front"></div>
+                        <div class="back">
+                            바나나 스무디 <br>
+                            겁나 맛있겠다   <br>
+                            2023-05-03 ~ 2023-05-03
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="front"></div>
+                        <div class="back">
+                            바나나 스무디 <br>
+                            겁나 맛있겠다   <br>
+                            2023-05-03 ~ 2023-05-03
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="front"></div>
+                        <div class="back">
+                            바나나 스무디 <br>
+                            겁나 맛있겠다   <br>
+                            2023-05-03 ~ 2023-05-03
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="front"></div>
+                        <div class="back">
+                            바나나 스무디 <br>
+                            겁나 맛있겠다   <br>
+                            2023-05-03 ~ 2023-05-03
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="front"></div>
+                        <div class="back">
+                            바나나 스무디 <br>
+                            겁나 맛있겠다   <br>
+                            2023-05-03 ~ 2023-05-03
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="front"></div>
+                        <div class="back">
+                            바나나 스무디 <br>
+                            겁나 맛있겠다   <br>
+                            2023-05-03 ~ 2023-05-03
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <img src="/Test01/img/footer.png" alt="">
+
+        </div>
+        <div class="footer_write" style="font-size: 14px;">
+            <p>
+                <span >대구광역시 동구 동대구로 496, 1층 (주)마실에프앤비</span></p>
+            <p>
+                <span>본사대표전화 : 1577-0656ㅣFAX 053-801-2201</span></p>
+            <p>
+                <span>E-Mail : masilcup@daum.netㅣ법인명 : (주)마실에프앤비</span></p>
+            <p>
+                <span>대표자 : 한창훈ㅣ사업자등록번호 : 786-88-01703</span></p>
+            <p>
+                <span>Copyright ⓒ 2023 마실커피 All rights reserved.</span></p>
+        </div>
+        <div class="policy" style="font-size: 14px;">
+            <ul>
+                <li>
+                    <a href="">이용약관</a>
+                </li>
+                <li>
+                    <a href="">개인정보처리방침</a>
+                </li>
+                <li>
+                    <a href="">about us</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
