@@ -1,0 +1,29 @@
+jsp 시험 답안지... 일껄?
+
+1. google.com
+2. form
+3. <c:otherwise>
+4. <c:import>
+5. ?
+6. servletFilter
+7. getQueryString()
+8.  FilterConfig
+9.  war
+10. DML
+11. <uri>
+12. response
+13. WEB-INF/lib
+14. <% %>
+15. executeUpdate()
+16. getCookies()
+17. <c:url>
+18. WHERE
+19. tomcat
+20. JDBC Driver 이름 
+21. application
+22. Start Line
+23. preparedStatement 객체 생성 시
+24. PrintWriter
+25. excuteQuery()
+26. 80
+27. 주석문
